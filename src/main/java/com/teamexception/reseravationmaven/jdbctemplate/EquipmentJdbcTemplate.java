@@ -11,6 +11,7 @@ import com.teamexception.reseravationmaven.model.Equipment;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.sql.DataSource;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
@@ -36,8 +37,13 @@ public class EquipmentJdbcTemplate implements EquipmentDAO {
     @Override
     public String getLastId() throws ClassNotFoundException, SQLException {
         String sql = "select * from Equipment order by 1 desc limit 1";
-        Equipment e = jdbcTemplateObject.queryForObject(sql, new EquipmentMapper());
-        return e.getEquipmentId();
+        Equipment e ;
+        try {
+            e = jdbcTemplateObject.queryForObject(sql, new EquipmentMapper());
+            return e.getEquipmentId();
+        } catch (EmptyResultDataAccessException ex) {
+            return "E0000000000";
+        }
     }
 
     @Override

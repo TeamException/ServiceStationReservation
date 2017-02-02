@@ -83,6 +83,5 @@ public class PredefinedServices {
      */
     public void setDescription(String description) {
         this.description = description;
-    }
-
+    }   
 }

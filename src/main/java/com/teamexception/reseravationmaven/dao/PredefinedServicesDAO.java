@@ -23,9 +23,13 @@ public interface PredefinedServicesDAO {
     
     public boolean updateService(PredefinedServices services) throws ClassNotFoundException, SQLException;
 
-    public ArrayList<PredefinedServices> getAllServices(String facilitatorId) throws ClassNotFoundException, SQLException;;
+    public ArrayList<PredefinedServices> getAllServices(String facilitatorId) throws ClassNotFoundException, SQLException;
 
-    public PredefinedServices searchServiceById(String serviceId) throws ClassNotFoundException, SQLException;;
+    public PredefinedServices searchByServiceTypeId(String serviceId , String typeId) throws ClassNotFoundException, SQLException;
+    
+    public PredefinedServices searchByServiceTypeId(String serviceId) throws ClassNotFoundException, SQLException;;
 
     public boolean deleteService(String serviceId) throws ClassNotFoundException, SQLException;
+    
+    public boolean isServicesExists(String serviceId, String facilitatorId) throws ClassNotFoundException, SQLException;
 }

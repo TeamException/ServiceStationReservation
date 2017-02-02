@@ -11,7 +11,6 @@ package com.teamexception.reseravationmaven.importedClasses;
  */
 public class IdGenarator {
     public static String idGenarator(String prefix,String oldId){
-            System.out.println(oldId);
             String s2 = oldId.substring(1);
             long x = Long.parseLong(s2);
             x++;
