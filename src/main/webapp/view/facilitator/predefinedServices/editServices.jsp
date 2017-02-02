@@ -1,17 +1,17 @@
 <%-- 
-    Document   : editEquipment
-    Created on : Dec 22, 2016, 10:01:02 AM
+    Document   : editServices
+    Created on : Jan 31, 2017, 6:56:29 PM
     Author     : Tharindu Jayathilake
 --%>
 
-<%@page import="com.teamexception.reseravationmaven.model.Equipment"%>
+<%@page import="com.teamexception.reseravationmaven.model.PredefinedServices"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Edit Equipment</title>
+        <title>Edit Predefined Services</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -93,34 +93,30 @@
             </nav>
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h1>Auto Lanka Service Station</h1>
+                    <h1>Edit Predefined Services</h1>
                 </div>
                 <table id="services" class="table table-striped table-hover table-users">
                     <thead>
                         <tr>
-                            <th>Equipment Name</th>
+                            <th>Service Id</th>
+                            <th>Service Name</th>
                             <th>Description</th>
-                            <th>Manufacturer</th>
-                            <th>Purchased Date</th>
-                            <th>Quantity On Hand</th>
                         </tr>
                     </thead>
                     <tbody>
                         <%
-                            /*http://localhost:8080/ReseravationMaven/view/facilitator/predefinedServices/equipmentController/editEquipment*/
-                            ArrayList<Equipment> equipmentList = (ArrayList<Equipment>) request.getAttribute("equipmentList");
+                            /*http://localhost:8080/ReseravationMaven/view/facilitator/predefinedServices/serviceController/edit*/
+                            ArrayList<PredefinedServices> serviceList = (ArrayList<PredefinedServices>) request.getAttribute("serviceList");
 
-                            for (Equipment equipment : equipmentList) {
+                            for (PredefinedServices service : serviceList) {
                         %>
                         <tr class="add-row">
-                            <td class="equipmentName"><% out.print(equipment.getEquipmentName()); %></td>
-                            <td class="equipmentDesc"><% out.print(equipment.getEquipmentDescription()); %></td>
-                            <td class="equipmentManufac"><% out.print(equipment.getManufacturer()); %></td>
-                            <td class="equipmentPurchased"><% out.print(equipment.getPurchasedDate()); %></td>
-                            <td class="equipmentQoh"><% out.print(equipment.getQoh()); %></td>
-
-                            <td><a href="searchEquipment?equipmentId=<% out.print(equipment.getEquipmentId()); %>">Update</a></td>
-                            <td><a href="deleteEquipment?equipmentId=<% out.print(equipment.getEquipmentId()); %>">Delete</a></td>
+                            <td class="equipmentName"><% out.print(service.getServiceId()); %></td>
+                            <td class="equipmentDesc"><% out.print(service.getServiceName()); %></td>
+                            <td class="equipmentManufac"><% out.print(service.getDescription()); %></td>
+                           
+                            <td><a href="search?serviceId=<% out.print(service.getServiceId()); %>">Update</a></td>
+                            <td><a href="deleteEquipment?serviceId=<% out.print(service.getServiceId()); %>">Delete</a></td>
 
                             <%}%>
                     </tbody>

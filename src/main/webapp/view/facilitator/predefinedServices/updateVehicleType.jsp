@@ -1,17 +1,12 @@
 <%-- 
-    Document   : addPredefinedService
-    Created on : Dec 25, 2016, 9:37:15 AM
+    Document   : updateVehicleType
+    Created on : Feb 1, 2017, 10:57:13 PM
     Author     : Tharindu Jayathilake
 --%>
 
-
-<%@page import="com.teamexception.reseravationmaven.jdbctemplate.VehicleTypeJdbcTemplate"%>
-<%@page import="org.springframework.stereotype.Service"%>
-<%@page import="com.teamexception.reseravationmaven.dao.VehicleTypeDAO"%>
-<%@page import="com.teamexception.reseravationmaven.model.VehicleType"%>
-<%@page import="java.util.ArrayList"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+html lang="en">
     <head>
         <title>Predefined Services</title>
         <meta charset="utf-8">
@@ -213,6 +208,7 @@
                             <label class="control-label col-sm-2">Service Name:</label>
                             <div class="col-sm-6">
                                 <input id="serviceName" type="text" class="form-control" name="serviceName" placeholder="Enter Service Name">
+                                <input id="serviceId" type="text" class="form-control" name="serviceId" value="<% request.getParameter("serviceId");%>">
                             </div>
                         </div>
 
@@ -226,14 +222,8 @@
 
                         <div class="form-group">
                             <label class="control-label col-sm-2">Vehicle Type:</label>
-                            <div id ="combo" class="col-sm-6">
-                                <%--<select id="type" class="form-control" name="vehicleType">
-                                    <option active>--Select Type--</option>
-                                    <option>Car</option>
-                                    <option>Bus</option>
-                                    <option>Van</option>
-                                    <option>3 Wheeler</option>
-                                </select> --%>
+                            <div id ="combo" name="typeName" class="col-sm-6">
+      
                             </div>
                         </div>
 
@@ -253,30 +243,8 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-8">
-                                <button id="add" type="button" class="btn btn-success">Add Service</button>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-8">
-                                <table id="detail" class="table table-bordered">
-                                    <thead>
-                                    <th>Select</th>
-                                    <th>Vehicle Type</th>
-                                    <th>Duration(mins)</th>
-                                    <th>Cost(Rs)</th>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button id="deleteSelected" type="button" class="btn btn-primary">Delete Selected Rows</button>
-                                <button id="submit" class="btn btn-success">Submit</button>
+                                <button id="add" type="submit" class="btn btn-primary">Add Vehicle Type</button>
                             </div>
                         </div>
 
@@ -287,5 +255,3 @@
 
     </body>
 </html>
-
-

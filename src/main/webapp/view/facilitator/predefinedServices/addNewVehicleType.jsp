@@ -1,17 +1,17 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Add New Vehicle Type</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <style type="text/css">
-        body{
-          background:url(images/93742-d09dd7090171c70be749072814043b26.jpg);
-        }
+    <head>
+        <title>Add New Vehicle Type</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type="text/css">
+            body{
+                background:url(images/93742-d09dd7090171c70be749072814043b26.jpg);
+            }
         </style>
     </head>
     <body>
@@ -56,57 +56,57 @@
                 </a>
             </div>
 
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
-            <li><a href="#">Page 1-2</a></li>
-            <li><a href="#">Page 1-3</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">WebSiteName</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Page 1-1</a></li>
+                                    <li><a href="#">Page 1-2</a></li>
+                                    <li><a href="#">Page 1-3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Page 2</a></li>
+                            <li><a href="#">Page 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
- <div class="panel panel-primary">
-  <div class="panel-heading"><h1>Add New Vehicle Type</h1></div>
-   <div class="panel-body">
-       <form class="form-horizontal" method="post" action="VehicleTypeController">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h1>Add New Vehicle Type</h1></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" method="post" action="vehicleTypeController/addType">
 
-    <div class="form-group">
-      <label class="control-label col-sm-2">Vehicle Type:</label>
-      <div class="col-sm-6">
-        <input type="text" class="form-control" name="vehicleType" placeholder="Enter Vehicle Type">
-      </div>
-    </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Vehicle Type:</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="vehicleType" placeholder="Enter Vehicle Type">
+                            </div>
+                        </div>
 
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">Add Type</button>
-        <button type="reset" class="btn btn-primary">Clear</button>
-      </div>
-    </div>
-  </form>
-  </div>
-  </div>
-</div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Add Type</button>
+                                <button type="reset" class="btn btn-primary">Clear</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-</body>
+    </body>
 </html>
 

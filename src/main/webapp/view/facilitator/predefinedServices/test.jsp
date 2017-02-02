@@ -5,11 +5,6 @@
 --%>
 
 
-<%@page import="com.teamexception.reseravationmaven.jdbctemplate.VehicleTypeJdbcTemplate"%>
-<%@page import="org.springframework.stereotype.Service"%>
-<%@page import="com.teamexception.reseravationmaven.dao.VehicleTypeDAO"%>
-<%@page import="com.teamexception.reseravationmaven.model.VehicleType"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
     <head>
@@ -80,15 +75,19 @@
                 });
 
                 $("#submit").click(function () {
-                    var data = [];
-                    data.push(document.getElementById("serviceName").value);
-                    data.push(document.getElementById("description").value);
+                    var data ="{";
+                    data+="serviceName:"+document.getElementById("serviceName").value+",";
+                    data+="description:"+document.getElementById("description").value+",";
+                    
+                    /*data.push(document.getElementById("serviceName").value);
+                    data.push(document.getElementById("description").value);*/
 
 
                     $("table").find("tr").each(function () {
                         $(this).find("td").each(function () {
                             if ($(this).text() != "") {
-                                data.push($(this).text());
+                                /*data.push($(this).text());*/
+                                 data+="serviceName:"+document.getElementById("serviceName").value+",";
                             }
                         });
                     });
@@ -105,38 +104,10 @@
                 });
 
             });
-            
-            function createXMLHttpRequest() {
-                var xmlhttp;
-                if (window.XMLHttpRequest) {
-                    // code for IE7+, Firefox, Chrome, Opera, Safari 
-                    xmlhttp = new XMLHttpRequest();
-                } else {
-                    // code for IE6, IE5 
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                return xmlhttp;
-
-            }
-            function sendRequest() {
-                var url = "vehicleTypeController/allVehicleTypes";
-
-                var request = createXMLHttpRequest();
-                request.open("GET", url, true);
-                request.send(null);
-                request.onreadystatechange = function () {
-                    if (request.readyState == 4) {
-                        if (request.status == 200) {
-                            var output = request.responseText;
-                            document.getElementById('combo').innerHTML = output;
-                        }
-                    }
-                }
-            }
 
         </script>
     </head>
-    <body onload="sendRequest();">
+    <body>
 
         <div class="container">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -207,7 +178,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading"><h1>Add Predefined Service</h1></div>
                 <div class="panel-body">
-                    <form id="service" class="form-horizontal" method="GET" action="serviceController/add/">
+                    <form id="service" class="form-horizontal" method="GET" action="add/">
 
                         <div class="form-group">
                             <label class="control-label col-sm-2">Service Name:</label>
@@ -226,14 +197,15 @@
 
                         <div class="form-group">
                             <label class="control-label col-sm-2">Vehicle Type:</label>
-                            <div id ="combo" class="col-sm-6">
-                                <%--<select id="type" class="form-control" name="vehicleType">
+                            <div class="col-sm-6">
+                                <select id="type" class="form-control" name="vehicleType">
                                     <option active>--Select Type--</option>
                                     <option>Car</option>
                                     <option>Bus</option>
                                     <option>Van</option>
                                     <option>3 Wheeler</option>
-                                </select> --%>
+                                </select>
+                                <a href="#">Add New Vehicle Type</a>
                             </div>
                         </div>
 
